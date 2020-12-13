@@ -6,10 +6,6 @@
 
 package Facade;
 import javax.swing.JLabel;
-/**
- *
- * @author alang
- */
 
 public class Firework implements Element{
     private JLabel crackle,crackle1,crackle2,crown,crown1,crown2,fish,fish1,fish2;

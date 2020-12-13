@@ -5,10 +5,7 @@
  */
 package Strategic;
 
-/**
- *
- * @author alang
- */
+
 public class CrackleFirework extends Firework {
 
     public CrackleFirework() {

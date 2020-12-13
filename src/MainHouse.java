@@ -18,10 +18,7 @@ import javax.swing.JOptionPane;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author alang
- */
+
 public class MainHouse extends javax.swing.JFrame {
  public static final String SONG = "src\\song.mpeg";
     MP3Player mp3player = new MP3Player(new File(SONG));

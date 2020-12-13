@@ -5,10 +5,7 @@
  */
 package Command;
 
-/**
- *
- * @author alang
- */
+
 public interface Command {
     public void execute();
     

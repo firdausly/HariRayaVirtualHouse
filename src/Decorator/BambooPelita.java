@@ -7,10 +7,6 @@ package Decorator;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author alang
- */
 public class BambooPelita implements PelitaType {
 
     @Override

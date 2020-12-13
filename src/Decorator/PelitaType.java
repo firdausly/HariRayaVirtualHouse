@@ -5,10 +5,7 @@
  */
 package Decorator;
 
-/**
- *
- * @author alang
- */
+
 public interface PelitaType {
     void draw();
     

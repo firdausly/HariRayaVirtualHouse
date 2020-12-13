@@ -7,10 +7,7 @@ package Decorator;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author alang
- */
+
 public class KeroseneOilDecorator extends PelitaDecorator{
     
     public KeroseneOilDecorator(PelitaType decoratedPelita) {

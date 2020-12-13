@@ -7,10 +7,7 @@ package Decorator;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author alang
- */
+
 public class NormalPelita implements PelitaType {
 
     @Override

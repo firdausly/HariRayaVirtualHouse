@@ -7,10 +7,7 @@ package Facade;
 
 import javax.swing.JLabel;
 
-/**
- *
- * @author alang
- */
+
 public class Pelita implements Element{
 private JLabel pelita1,pelita2;
     @Override

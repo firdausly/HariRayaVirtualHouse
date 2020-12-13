@@ -5,10 +5,7 @@
  */
 package Facade;
 
-/**
- *
- * @author alang
- */
+
 public interface Element {
     void draw();
     

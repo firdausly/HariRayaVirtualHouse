@@ -6,10 +6,7 @@
 package Facade;
 
 import javax.swing.JLabel;
-/**
- *
- * @author alang
- */
+
 public class KetupatFacade implements Element{
     private JLabel ketupat1,ketupat2,ketupat3,ketupat4;
     @Override

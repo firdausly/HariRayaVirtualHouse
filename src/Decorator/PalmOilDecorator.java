@@ -7,10 +7,6 @@ package Decorator;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author alang
- */
 public class PalmOilDecorator extends PelitaDecorator {
     
     public PalmOilDecorator(PelitaType decoratedPelita) {

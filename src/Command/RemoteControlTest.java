@@ -5,10 +5,6 @@
  */
 package Command;
 
-/**
- *
- * @author alang
- */
 public class RemoteControlTest {
     
            

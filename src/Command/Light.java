@@ -5,10 +5,7 @@
  */
 package Command;
 
-/**
- *
- * @author alang
- */
+
 import javax.swing.JLabel;
 public class Light {
     

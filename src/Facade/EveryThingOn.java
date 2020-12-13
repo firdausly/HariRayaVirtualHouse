@@ -5,10 +5,7 @@
  */
 package Facade;
 
-/**
- *
- * @author alang
- */
+
 
 public class EveryThingOn {
     private Element Firework;

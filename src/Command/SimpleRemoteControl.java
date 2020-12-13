@@ -5,10 +5,7 @@
  */
 package Command;
 
-/**
- *
- * @author alang
- */
+
 public class SimpleRemoteControl {
     Command slot;
     

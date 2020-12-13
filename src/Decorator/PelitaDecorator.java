@@ -5,10 +5,6 @@
  */
 package Decorator;
 
-/**
- *
- * @author alang
- */
 public abstract class PelitaDecorator implements PelitaType {
     
     protected PelitaType decoratedPelita;

@@ -7,10 +7,7 @@ package Facade;
 
 import javax.swing.JLabel;
 
-/**
- *
- * @author alang
- */
+
 public class LightOn implements Element {
 private JLabel lighton;
     @Override

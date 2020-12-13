@@ -5,10 +5,6 @@
  */
 package Strategic;
 
-/**
- *
- * @author alang
- */
 public class Sparkle implements fireBehavior {
 
     @Override
