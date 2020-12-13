@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  * @author alang
  */
 public class MainHouse extends javax.swing.JFrame {
-public static final String SONG = "src\\song.mpeg";
+ public static final String SONG = "src\\song.mpeg";
     MP3Player mp3player = new MP3Player(new File(SONG));
     /**
      * Creates new form MainHouse
@@ -60,7 +60,7 @@ public static final String SONG = "src\\song.mpeg";
     }
 
     
-    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -153,7 +153,11 @@ public static final String SONG = "src\\song.mpeg";
 
         Fish2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.png"))); // NOI18N
         getContentPane().add(Fish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 70, 80));
+
+        ketupatbawang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ketupat.png"))); // NOI18N
         getContentPane().add(ketupatbawang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 30, 30));
+
+        ketupatbawang1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ketupat.png"))); // NOI18N
         getContentPane().add(ketupatbawang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 30, 30));
 
         KetupatPalas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/palas.png"))); // NOI18N
