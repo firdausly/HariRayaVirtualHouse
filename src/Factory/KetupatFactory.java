@@ -1,4 +1,4 @@
-public class KetupatPalasFactory {
+public class KetupatFactory {
  public Ketupat createKetupat(String type){
   Ketupat Ketupat=null;
 

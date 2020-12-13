@@ -1,7 +1,7 @@
 public class KetupatStore {
-    KetupatPalasFactory factory;
+    KetupatFactory factory;
 
-    public KetupatStore(KetupatPalasFactory factory){
+    public KetupatStore(KetupatFactory factory){
         this.factory=factory;
     }
 

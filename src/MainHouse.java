@@ -8,6 +8,8 @@ import Strategic.Fly;
 import Strategic.Trail;
 import Strategic.CrackleFirework;
 import Strategic.Sparkle;
+import jaco.mp3.player.MP3Player;
+import java.io.File;
 import javax.swing.JOptionPane;
 
 /*
@@ -21,7 +23,8 @@ import javax.swing.JOptionPane;
  * @author alang
  */
 public class MainHouse extends javax.swing.JFrame {
-
+public static final String SONG = "src\\song.mpeg";
+    MP3Player mp3player = new MP3Player(new File(SONG));
     /**
      * Creates new form MainHouse
      */
@@ -56,6 +59,8 @@ public class MainHouse extends javax.swing.JFrame {
         
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,7 +70,7 @@ public class MainHouse extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        FireButton = new javax.swing.JButton();
         Crackle = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         Crackle1 = new javax.swing.JLabel();
@@ -95,17 +100,21 @@ public class MainHouse extends javax.swing.JFrame {
         Pelitaoil = new javax.swing.JComboBox<>();
         TurnOnAll = new javax.swing.JButton();
         TurnOffAll = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Fire");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        FireButton.setText("Fire");
+        FireButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                FireButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
+        getContentPane().add(FireButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
 
         Crackle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.png"))); // NOI18N
         getContentPane().add(Crackle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 60, 60));
@@ -144,11 +153,7 @@ public class MainHouse extends javax.swing.JFrame {
 
         Fish2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.png"))); // NOI18N
         getContentPane().add(Fish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 70, 80));
-
-        ketupatbawang.setIcon(new javax.swing.ImageIcon("C:\\Users\\alang\\Desktop\\ketupat.png")); // NOI18N
         getContentPane().add(ketupatbawang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 30, 30));
-
-        ketupatbawang1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alang\\Desktop\\ketupat.png")); // NOI18N
         getContentPane().add(ketupatbawang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 30, 30));
 
         KetupatPalas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/palas.png"))); // NOI18N
@@ -220,7 +225,7 @@ public class MainHouse extends javax.swing.JFrame {
                 PelitaoilActionPerformed(evt);
             }
         });
-        getContentPane().add(Pelitaoil, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+        getContentPane().add(Pelitaoil, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, -1, -1));
 
         TurnOnAll.setText("Turn All Firework,Ketupat and Pelita On");
         TurnOnAll.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +233,7 @@ public class MainHouse extends javax.swing.JFrame {
                 TurnOnAllActionPerformed(evt);
             }
         });
-        getContentPane().add(TurnOnAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, 20));
+        getContentPane().add(TurnOnAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, -1, 20));
 
         TurnOffAll.setText("Turn All Firework,Ketupat and Pelita Off");
         TurnOffAll.addActionListener(new java.awt.event.ActionListener() {
@@ -236,12 +241,39 @@ public class MainHouse extends javax.swing.JFrame {
                 TurnOffAllActionPerformed(evt);
             }
         });
-        getContentPane().add(TurnOffAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, -1, 20));
+        getContentPane().add(TurnOffAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, -1, 20));
+
+        jLabel5.setText("Play Music");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, -1));
+
+        jButton2.setText("Play");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
+
+        jButton3.setText("Pause");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
+
+        jButton4.setText("Stop");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void FireButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FireButtonActionPerformed
         // TODO add your handling code here:
               String selectedfirework=jComboBox1.getSelectedItem().toString();
         
@@ -371,7 +403,7 @@ public class MainHouse extends javax.swing.JFrame {
         Fish2.setVisible(false);
         }
             
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_FireButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -384,7 +416,7 @@ public class MainHouse extends javax.swing.JFrame {
         String selectedketupat=KetupatChoose.getSelectedItem().toString();
         
         
-        KetupatPalasFactory factory=new KetupatPalasFactory();
+        KetupatFactory factory=new KetupatFactory();
         KetupatStore store=new KetupatStore(factory);
         
         
@@ -561,6 +593,18 @@ public class MainHouse extends javax.swing.JFrame {
         
     }//GEN-LAST:event_TurnOffAllActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        mp3player.play();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        mp3player.pause();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         mp3player.stop();
+    }//GEN-LAST:event_jButton4ActionPerformed
+                        
     /**
      * @param args the command line arguments
      */
@@ -606,6 +650,7 @@ public class MainHouse extends javax.swing.JFrame {
     private javax.swing.JLabel Crown;
     private javax.swing.JLabel Crown1;
     private javax.swing.JLabel Crown2;
+    private javax.swing.JButton FireButton;
     private javax.swing.JLabel Fish;
     private javax.swing.JLabel Fish1;
     private javax.swing.JLabel Fish2;
@@ -617,12 +662,15 @@ public class MainHouse extends javax.swing.JFrame {
     private javax.swing.JButton TurnOffAll;
     private javax.swing.JButton TurnOnAll;
     private javax.swing.JLabel backgroundimage;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel ketupatbawang;
     private javax.swing.JLabel ketupatbawang1;
     private javax.swing.JLabel lightray;
