@@ -1,4 +1,5 @@
 
+import Command.*;
 import Strategic.FishFirework;
 import Strategic.CrownFirework;
 import Strategic.Fly;
@@ -44,6 +45,8 @@ public class MainHouse extends javax.swing.JFrame {
         KetupatPalas1.setVisible(false);
         ketupatbawang.setVisible(false);
         ketupatbawang1.setVisible(false);
+        
+        lightray.setVisible(false);
     }
 
     /**
@@ -73,6 +76,9 @@ public class MainHouse extends javax.swing.JFrame {
         KetupatPalas1 = new javax.swing.JLabel();
         Ketupat = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        turnonlight = new javax.swing.JButton();
+        turnofflight = new javax.swing.JButton();
+        lightray = new javax.swing.JLabel();
         backgroundimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -147,6 +153,26 @@ public class MainHouse extends javax.swing.JFrame {
 
         jLabel2.setText("Choose Ketupat");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
+
+        turnonlight.setText("Turn On Light");
+        turnonlight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                turnonlightActionPerformed(evt);
+            }
+        });
+        getContentPane().add(turnonlight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+
+        turnofflight.setText("Turn Off Light");
+        turnofflight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                turnofflightActionPerformed(evt);
+            }
+        });
+        getContentPane().add(turnofflight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, -1));
+
+        lightray.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ray.png"))); // NOI18N
+        lightray.setText("jLabel1");
+        getContentPane().add(lightray, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 210, 130));
 
         backgroundimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/hariraya.jpg"))); // NOI18N
         backgroundimage.setText("jLabel1");
@@ -309,7 +335,7 @@ public class MainHouse extends javax.swing.JFrame {
                 ketupatbawang1.setVisible(false);
                 
                 Ketupat ketupat=store.addKetupat(selectedketupat);
-        JOptionPane.showMessageDialog(null, ketupat);
+                JOptionPane.showMessageDialog(null, ketupat);
             
         } else if(selectedketupat.equals("Ketupat Bawang")) {
             ketupatbawang.setVisible(true);
@@ -318,7 +344,7 @@ public class MainHouse extends javax.swing.JFrame {
                 KetupatPalas1.setVisible(false);
                 
                 Ketupat ketupat=store.addKetupat(selectedketupat);
-        JOptionPane.showMessageDialog(null, ketupat);
+                JOptionPane.showMessageDialog(null, ketupat);
             
         } else if(selectedketupat.equals("None")){
                  KetupatPalas.setVisible(false);
@@ -342,6 +368,30 @@ public class MainHouse extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_KetupatActionPerformed
+
+    private void turnofflightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turnofflightActionPerformed
+        // TODO add your handling code here:
+        SimpleRemoteControl remote=new SimpleRemoteControl();
+        Light light=new Light(lightray);
+        LightOffCommand lightoff=new LightOffCommand(light);
+        
+        remote.setCommand(lightoff);
+        remote.buttonWasPressed();
+    }//GEN-LAST:event_turnofflightActionPerformed
+
+    private void turnonlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turnonlightActionPerformed
+        // TODO add your handling code here:
+        
+        SimpleRemoteControl remote=new SimpleRemoteControl();
+        Light light=new Light(lightray);
+        LightOnCommand lighton=new LightOnCommand(light);
+        
+        remote.setCommand(lighton);
+        remote.buttonWasPressed();
+        
+        
+        
+    }//GEN-LAST:event_turnonlightActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,5 +449,8 @@ public class MainHouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel ketupatbawang;
     private javax.swing.JLabel ketupatbawang1;
+    private javax.swing.JLabel lightray;
+    private javax.swing.JButton turnofflight;
+    private javax.swing.JButton turnonlight;
     // End of variables declaration//GEN-END:variables
 }
