@@ -1,6 +1,7 @@
 
 import Command.*;
 import Decorator.*;
+import Facade.*;
 import Strategic.FishFirework;
 import Strategic.CrownFirework;
 import Strategic.Fly;
@@ -29,6 +30,7 @@ public class MainHouse extends javax.swing.JFrame {
 
         initComponents();
         
+        //set the customization to false
         Crackle.setVisible(false);
         Crackle1.setVisible(false); 
         Crackle2.setVisible(false);
@@ -79,7 +81,7 @@ public class MainHouse extends javax.swing.JFrame {
         ketupatbawang1 = new javax.swing.JLabel();
         KetupatPalas = new javax.swing.JLabel();
         KetupatPalas1 = new javax.swing.JLabel();
-        Ketupat = new javax.swing.JComboBox<>();
+        KetupatChoose = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         turnonlight = new javax.swing.JButton();
         turnofflight = new javax.swing.JButton();
@@ -91,6 +93,8 @@ public class MainHouse extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Pelitaoil = new javax.swing.JComboBox<>();
+        TurnOnAll = new javax.swing.JButton();
+        TurnOffAll = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,13 +157,13 @@ public class MainHouse extends javax.swing.JFrame {
         KetupatPalas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/palas.png"))); // NOI18N
         getContentPane().add(KetupatPalas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, -1, -1));
 
-        Ketupat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ketupat Palas", "Ketupat Bawang", "All", "None" }));
-        Ketupat.addActionListener(new java.awt.event.ActionListener() {
+        KetupatChoose.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ketupat Palas", "Ketupat Bawang", "All", "None" }));
+        KetupatChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KetupatActionPerformed(evt);
+                KetupatChooseActionPerformed(evt);
             }
         });
-        getContentPane().add(Ketupat, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
+        getContentPane().add(KetupatChoose, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
 
         jLabel2.setText("Choose Ketupat");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
@@ -208,7 +212,7 @@ public class MainHouse extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         jLabel4.setText("Choose Pelita Oil");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
 
         Pelitaoil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kerosene", "Palm Oil" }));
         Pelitaoil.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +220,23 @@ public class MainHouse extends javax.swing.JFrame {
                 PelitaoilActionPerformed(evt);
             }
         });
-        getContentPane().add(Pelitaoil, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
+        getContentPane().add(Pelitaoil, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+
+        TurnOnAll.setText("Turn All Firework,Ketupat and Pelita On");
+        TurnOnAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TurnOnAllActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TurnOnAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, 20));
+
+        TurnOffAll.setText("Turn All Firework,Ketupat and Pelita Off");
+        TurnOffAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TurnOffAllActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TurnOffAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, -1, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -357,11 +377,11 @@ public class MainHouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void KetupatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KetupatActionPerformed
+    private void KetupatChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KetupatChooseActionPerformed
         // TODO add your handling code here:
         
         
-        String selectedketupat=Ketupat.getSelectedItem().toString();
+        String selectedketupat=KetupatChoose.getSelectedItem().toString();
         
         
         KetupatPalasFactory factory=new KetupatPalasFactory();
@@ -407,7 +427,7 @@ public class MainHouse extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_KetupatActionPerformed
+    }//GEN-LAST:event_KetupatChooseActionPerformed
 
     private void turnofflightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turnofflightActionPerformed
         // TODO add your handling code here:
@@ -497,6 +517,50 @@ public class MainHouse extends javax.swing.JFrame {
         
     }//GEN-LAST:event_PelitaoilActionPerformed
 
+    private void TurnOnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnOnAllActionPerformed
+        // TODO add your handling code here:
+        Firework firework=new Firework(Crackle,Crackle1,Crackle2,Crown,Crown1,Crown2,Fish,Fish1,Fish2);
+        KetupatFacade ketupat=new KetupatFacade(KetupatPalas,KetupatPalas1,ketupatbawang1,ketupatbawang);
+        LightOn lighton=new LightOn(lightray);
+        Pelita pelita=new Pelita(NormalPelita,BambooPelita);
+        
+        EveryThingOn everything=new EveryThingOn();
+        
+        
+       everything.setFirework(firework);
+       everything.setKetupat(ketupat);
+       everything.setLightOn(lighton);
+       everything.setPelita(pelita);
+       everything.drawFirework();
+       everything.drawKetupat();
+       everything.drawLightOn();
+       everything.drawPelita();
+       
+       
+    }//GEN-LAST:event_TurnOnAllActionPerformed
+
+    private void TurnOffAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnOffAllActionPerformed
+        // TODO add your handling code here:
+          Firework firework=new Firework(Crackle,Crackle1,Crackle2,Crown,Crown1,Crown2,Fish,Fish1,Fish2);
+        KetupatFacade ketupat=new KetupatFacade(KetupatPalas,KetupatPalas1,ketupatbawang1,ketupatbawang);
+        LightOn lighton=new LightOn(lightray);
+        Pelita pelita=new Pelita(NormalPelita,BambooPelita);
+        
+        EveryThingOn everything=new EveryThingOn();
+        
+        
+       everything.setFirework(firework);
+       everything.setKetupat(ketupat);
+       everything.setLightOn(lighton);
+       everything.setPelita(pelita);
+       everything.undrawFirework();
+       everything.undrawKetupat();
+       everything.undrawLightOn();
+       everything.undrawPelita();
+        
+        
+    }//GEN-LAST:event_TurnOffAllActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -545,11 +609,13 @@ public class MainHouse extends javax.swing.JFrame {
     private javax.swing.JLabel Fish;
     private javax.swing.JLabel Fish1;
     private javax.swing.JLabel Fish2;
-    private javax.swing.JComboBox<String> Ketupat;
+    private javax.swing.JComboBox<String> KetupatChoose;
     private javax.swing.JLabel KetupatPalas;
     private javax.swing.JLabel KetupatPalas1;
     private javax.swing.JLabel NormalPelita;
     private javax.swing.JComboBox<String> Pelitaoil;
+    private javax.swing.JButton TurnOffAll;
+    private javax.swing.JButton TurnOnAll;
     private javax.swing.JLabel backgroundimage;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
