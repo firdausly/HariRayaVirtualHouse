@@ -92,9 +92,8 @@ public class MainHouse extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
 
-        Crackle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.JPG"))); // NOI18N
-        Crackle.setDisabledIcon(null);
-        getContentPane().add(Crackle, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 40, 50));
+        Crackle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.png"))); // NOI18N
+        getContentPane().add(Crackle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 60, 60));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Crown", "Crackle", "Fish", "All", "None", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,32 +103,32 @@ public class MainHouse extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
-        Crackle1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.JPG"))); // NOI18N
-        getContentPane().add(Crackle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 50, 50));
+        Crackle1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.png"))); // NOI18N
+        getContentPane().add(Crackle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 60, 70));
 
         jLabel3.setText("Choose Firework");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 110, -1));
 
-        Crackle2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.JPG"))); // NOI18N
-        getContentPane().add(Crackle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 50, 50));
+        Crackle2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.png"))); // NOI18N
+        getContentPane().add(Crackle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 60, 60));
 
-        Crown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crown.JPG"))); // NOI18N
-        getContentPane().add(Crown, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, 50));
+        Crown.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crown.png"))); // NOI18N
+        getContentPane().add(Crown, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 70, 70));
 
-        Crown1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crown.JPG"))); // NOI18N
-        getContentPane().add(Crown1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, -1, 50));
+        Crown1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crown.png"))); // NOI18N
+        getContentPane().add(Crown1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, 70));
 
-        Crown2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crown.JPG"))); // NOI18N
-        getContentPane().add(Crown2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, 50));
+        Crown2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crown.png"))); // NOI18N
+        getContentPane().add(Crown2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 60, 80));
 
-        Fish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.JPG"))); // NOI18N
-        getContentPane().add(Fish, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 40, 40));
+        Fish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.png"))); // NOI18N
+        getContentPane().add(Fish, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 70, 70));
 
-        Fish1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.JPG"))); // NOI18N
-        getContentPane().add(Fish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 50, 40));
+        Fish1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.png"))); // NOI18N
+        getContentPane().add(Fish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 70, 60));
 
-        Fish2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.JPG"))); // NOI18N
-        getContentPane().add(Fish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 50, 50));
+        Fish2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.png"))); // NOI18N
+        getContentPane().add(Fish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 70, 80));
 
         ketupatbawang.setIcon(new javax.swing.ImageIcon("C:\\Users\\alang\\Desktop\\ketupat.png")); // NOI18N
         getContentPane().add(ketupatbawang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 30, 30));
