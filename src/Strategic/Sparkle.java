@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package harirayavirtualhouse.Strategic;
+package Strategic;
 
 /**
  *
  * @author alang
  */
-public class Trail implements fireBehavior {
+public class Sparkle implements fireBehavior {
 
     @Override
     public String fire() {
-       return "Fire firework with trail";
+        return "Fire firework with sparkle";
     }
     
 }

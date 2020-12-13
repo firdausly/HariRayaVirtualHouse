@@ -1,5 +1,10 @@
 
-import harirayavirtualhouse.Strategic.*;
+import Strategic.FishFirework;
+import Strategic.CrownFirework;
+import Strategic.Fly;
+import Strategic.Trail;
+import Strategic.CrackleFirework;
+import Strategic.Sparkle;
 import javax.swing.JOptionPane;
 
 /*
@@ -33,6 +38,12 @@ public class MainHouse extends javax.swing.JFrame {
         Fish.setVisible(false);
         Fish1.setVisible(false); 
         Fish2.setVisible(false);
+        
+        
+        KetupatPalas.setVisible(false);
+        KetupatPalas1.setVisible(false);
+        ketupatbawang.setVisible(false);
+        ketupatbawang1.setVisible(false);
     }
 
     /**
@@ -56,6 +67,12 @@ public class MainHouse extends javax.swing.JFrame {
         Fish = new javax.swing.JLabel();
         Fish1 = new javax.swing.JLabel();
         Fish2 = new javax.swing.JLabel();
+        ketupatbawang = new javax.swing.JLabel();
+        ketupatbawang1 = new javax.swing.JLabel();
+        KetupatPalas = new javax.swing.JLabel();
+        KetupatPalas1 = new javax.swing.JLabel();
+        Ketupat = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
         backgroundimage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,7 +84,7 @@ public class MainHouse extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
 
         Crackle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.JPG"))); // NOI18N
         Crackle.setDisabledIcon(null);
@@ -79,7 +96,7 @@ public class MainHouse extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
         Crackle1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/crackle.JPG"))); // NOI18N
         getContentPane().add(Crackle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 50, 50));
@@ -107,6 +124,29 @@ public class MainHouse extends javax.swing.JFrame {
 
         Fish2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fish.JPG"))); // NOI18N
         getContentPane().add(Fish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 50, 50));
+
+        ketupatbawang.setIcon(new javax.swing.ImageIcon("C:\\Users\\alang\\Desktop\\ketupat.png")); // NOI18N
+        getContentPane().add(ketupatbawang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 30, 30));
+
+        ketupatbawang1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alang\\Desktop\\ketupat.png")); // NOI18N
+        getContentPane().add(ketupatbawang1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 30, 30));
+
+        KetupatPalas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/palas.png"))); // NOI18N
+        getContentPane().add(KetupatPalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+
+        KetupatPalas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/palas.png"))); // NOI18N
+        getContentPane().add(KetupatPalas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, -1, -1));
+
+        Ketupat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ketupat Palas", "Ketupat Bawang", "All", "None" }));
+        Ketupat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KetupatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Ketupat, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
+
+        jLabel2.setText("Choose Ketupat");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
 
         backgroundimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/hariraya.jpg"))); // NOI18N
         backgroundimage.setText("jLabel1");
@@ -251,6 +291,58 @@ public class MainHouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void KetupatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KetupatActionPerformed
+        // TODO add your handling code here:
+        
+        
+        String selectedketupat=Ketupat.getSelectedItem().toString();
+        
+        
+        KetupatPalasFactory factory=new KetupatPalasFactory();
+        KetupatStore store=new KetupatStore(factory);
+        
+        
+        if(selectedketupat.equals("Ketupat Palas")){
+                KetupatPalas.setVisible(true);
+                KetupatPalas1.setVisible(true);
+                ketupatbawang.setVisible(false);
+                ketupatbawang1.setVisible(false);
+                
+                Ketupat ketupat=store.addKetupat(selectedketupat);
+        JOptionPane.showMessageDialog(null, ketupat);
+            
+        } else if(selectedketupat.equals("Ketupat Bawang")) {
+            ketupatbawang.setVisible(true);
+                ketupatbawang1.setVisible(true);
+                KetupatPalas.setVisible(false);
+                KetupatPalas1.setVisible(false);
+                
+                Ketupat ketupat=store.addKetupat(selectedketupat);
+        JOptionPane.showMessageDialog(null, ketupat);
+            
+        } else if(selectedketupat.equals("None")){
+                 KetupatPalas.setVisible(false);
+                KetupatPalas1.setVisible(false);
+                ketupatbawang.setVisible(false);
+                ketupatbawang1.setVisible(false);
+        } else if(selectedketupat.equals("All")){
+                 KetupatPalas.setVisible(true);
+                KetupatPalas1.setVisible(true);
+                ketupatbawang.setVisible(true);
+                ketupatbawang1.setVisible(true);
+                
+            }
+        
+       
+       
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_KetupatActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -297,9 +389,15 @@ public class MainHouse extends javax.swing.JFrame {
     private javax.swing.JLabel Fish;
     private javax.swing.JLabel Fish1;
     private javax.swing.JLabel Fish2;
+    private javax.swing.JComboBox<String> Ketupat;
+    private javax.swing.JLabel KetupatPalas;
+    private javax.swing.JLabel KetupatPalas1;
     private javax.swing.JLabel backgroundimage;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel ketupatbawang;
+    private javax.swing.JLabel ketupatbawang1;
     // End of variables declaration//GEN-END:variables
 }

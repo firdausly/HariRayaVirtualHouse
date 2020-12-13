@@ -3,20 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package harirayavirtualhouse.Strategic;
+package Strategic;
 
 /**
  *
  * @author alang
  */
-public class FishFirework extends Firework {
-    
-    public FishFirework() {
-        behavior=new Sparkle();
-    }
+public class Fly implements fireBehavior {
 
     @Override
-    public void Display() {
-        System.out.println("");
+    public String fire() {
+        return "Firework fly above";
     }
+    
 }
