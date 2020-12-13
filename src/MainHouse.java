@@ -1,5 +1,6 @@
 
 import Command.*;
+import Decorator.*;
 import Strategic.FishFirework;
 import Strategic.CrownFirework;
 import Strategic.Fly;
@@ -47,6 +48,10 @@ public class MainHouse extends javax.swing.JFrame {
         ketupatbawang1.setVisible(false);
         
         lightray.setVisible(false);
+        
+        NormalPelita.setVisible(false);
+        BambooPelita.setVisible(false);
+        
     }
 
     /**
@@ -79,7 +84,13 @@ public class MainHouse extends javax.swing.JFrame {
         turnonlight = new javax.swing.JButton();
         turnofflight = new javax.swing.JButton();
         lightray = new javax.swing.JLabel();
+        BambooPelita = new javax.swing.JLabel();
+        NormalPelita = new javax.swing.JLabel();
         backgroundimage = new javax.swing.JLabel();
+        ChoosePelita = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Pelitaoil = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -159,7 +170,7 @@ public class MainHouse extends javax.swing.JFrame {
                 turnonlightActionPerformed(evt);
             }
         });
-        getContentPane().add(turnonlight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, -1));
+        getContentPane().add(turnonlight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
         turnofflight.setText("Turn Off Light");
         turnofflight.addActionListener(new java.awt.event.ActionListener() {
@@ -173,9 +184,39 @@ public class MainHouse extends javax.swing.JFrame {
         lightray.setText("jLabel1");
         getContentPane().add(lightray, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 210, 130));
 
+        BambooPelita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pelita.png"))); // NOI18N
+        BambooPelita.setText("jLabel1");
+        getContentPane().add(BambooPelita, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 190, 100));
+
+        NormalPelita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pelitabiasa.jpg"))); // NOI18N
+        NormalPelita.setText("jLabel1");
+        getContentPane().add(NormalPelita, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 220));
+
         backgroundimage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/hariraya.jpg"))); // NOI18N
         backgroundimage.setText("jLabel1");
         getContentPane().add(backgroundimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
+
+        ChoosePelita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal Pelita", "Bamboo Pelita/Panjut", "None", "All" }));
+        ChoosePelita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChoosePelitaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ChoosePelita, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 100, -1));
+
+        jLabel1.setText("Choose Pelita");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
+
+        jLabel4.setText("Choose Pelita Oil");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+
+        Pelitaoil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kerosene", "Palm Oil" }));
+        Pelitaoil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PelitaoilActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Pelitaoil, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -392,6 +433,70 @@ public class MainHouse extends javax.swing.JFrame {
         
     }//GEN-LAST:event_turnonlightActionPerformed
 
+    private void ChoosePelitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChoosePelitaActionPerformed
+        // TODO add your handling code here:
+         String selectedpelita=ChoosePelita.getSelectedItem().toString();
+         
+         PelitaType normalpelita=new NormalPelita();
+         PelitaType bamboopelita=new BambooPelita();
+         
+         
+         if(selectedpelita.equals("Normal Pelita")){
+             normalpelita.draw();
+             NormalPelita.setVisible(true);
+             BambooPelita.setVisible(false);
+             
+         } else if (selectedpelita.equals("Bamboo Pelita/Panjut")){
+             bamboopelita.draw();
+             NormalPelita.setVisible(false);
+        BambooPelita.setVisible(true);
+             
+         } else if (selectedpelita.equals("None")){
+             NormalPelita.setVisible(false);
+        BambooPelita.setVisible(false);
+             
+         } else if (selectedpelita.equals("All")){
+             JOptionPane.showMessageDialog(null, "All selected");
+             NormalPelita.setVisible(true);
+        BambooPelita.setVisible(true);
+         }
+        
+        
+    }//GEN-LAST:event_ChoosePelitaActionPerformed
+
+    private void PelitaoilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PelitaoilActionPerformed
+        // TODO add your handling code here: String selectedpelita=Ketupat.getSelectedItem().toString();
+        String selectedpelita=ChoosePelita.getSelectedItem().toString(); 
+        String selectedoil=Pelitaoil.getSelectedItem().toString();
+          
+         PelitaType normalpelitakerosene=new KeroseneOilDecorator(new NormalPelita());
+         PelitaType bamboopelitakerosene=new KeroseneOilDecorator(new BambooPelita());
+         PelitaType normalpelitaPalmoil=new PalmOilDecorator(new NormalPelita());
+         PelitaType bamboopelitaPalmoil=new PalmOilDecorator(new BambooPelita());
+         
+         
+         if(selectedpelita.equals("Normal Pelita") && selectedoil.equals("Kerosene") ){
+             normalpelitakerosene.draw();
+             NormalPelita.setVisible(true);
+        BambooPelita.setVisible(false);
+             
+         } else if(selectedpelita.equals("Normal Pelita") && selectedoil.equals("Palm Oil") ){
+             normalpelitaPalmoil.draw();
+             NormalPelita.setVisible(true);
+        BambooPelita.setVisible(false);
+         }  else if(selectedpelita.equals("Bamboo Pelita/Panjut") && selectedoil.equals("Kerosene") ){
+             bamboopelitakerosene.draw();
+             NormalPelita.setVisible(false);
+        BambooPelita.setVisible(true);
+             
+         } else if(selectedpelita.equals("Bamboo Pelita/Panjut") && selectedoil.equals("Palm Oil") ){
+             bamboopelitaPalmoil.draw();
+             NormalPelita.setVisible(false);
+        BambooPelita.setVisible(true);
+         } 
+        
+    }//GEN-LAST:event_PelitaoilActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -429,6 +534,8 @@ public class MainHouse extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BambooPelita;
+    private javax.swing.JComboBox<String> ChoosePelita;
     private javax.swing.JLabel Crackle;
     private javax.swing.JLabel Crackle1;
     private javax.swing.JLabel Crackle2;
@@ -441,11 +548,15 @@ public class MainHouse extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Ketupat;
     private javax.swing.JLabel KetupatPalas;
     private javax.swing.JLabel KetupatPalas1;
+    private javax.swing.JLabel NormalPelita;
+    private javax.swing.JComboBox<String> Pelitaoil;
     private javax.swing.JLabel backgroundimage;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel ketupatbawang;
     private javax.swing.JLabel ketupatbawang1;
     private javax.swing.JLabel lightray;
