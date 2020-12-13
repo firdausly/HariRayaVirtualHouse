@@ -407,7 +407,7 @@ public class MainHouse extends javax.swing.JFrame {
     }//GEN-LAST:event_FireButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        // TODO d your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void KetupatChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KetupatChooseActionPerformed
